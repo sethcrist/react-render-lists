@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import List from "./List";
 
-function App() {
+const fruits = [
+  { id: 1, name: "apple", calories: 95 },
+  { id: 2, name: "bannana", calories: 105 },
+  { id: 3, name: "orange", calories: 45 },
+  { id: 4, name: "coconut", calories: 159 },
+  { id: 5, name: "pineapple", calories: 37 }
+]
+
+const vegetables = [
+  { id: 1, name: "potatoes", calories: 110 },
+  { id: 2, name: "carrots", calories: 25 },
+  { id: 3, name: "celery", calories: 15 },
+  { id: 4, name: "corn", calories: 63 },
+  { id: 5, name: "broccoli", calories: 50 }
+]
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {fruits.length > 0 ? <List items={fruits} category="Fruits" /> : null }
+      {vegetables.length > 0 ? <List items={vegetables} category="Vegetables" /> : null }
+    </>
   );
 }
 
